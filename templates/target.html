@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Target Nutrients
+{% endblock %}
+
+{% block header %}
+    Target Nutrients
+{% endblock %}
+
+{% block description %}
+    Enter your body weight and nutrition goal to calculate your targets nutrients!
+{% endblock %}
+
+{% block main %}
+    <form>
+        <div class="form-group">
+            <input class="form-control" name="weight" placeholder="Enter Weight (lbs)" type="text">
+        </div>
+        <div class="form-group">
+            <select class="form-control" name="goal">
+                <option selected disabled>Goal</option>
+                <option>Lose Weight</option>
+                <option>Maintain Weight</option>
+                <option>Gain Weight</option>
+            </select>
+        </div>
+        <button class="btn btn-primary calculate">Calculate</button>
+    </form><br>
+
+    <div class="container width-600 targets" style="display:none">
+        <div class="center-green">
+            <div class="row">
+                <div class="col-sm-12 big" id="calorie"></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 xsmall">Target Calories</div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-sm-12 medium">Macro Nutrients</div>
+            </div>
+            <div class="row center-green small">
+                <div class="col-sm-4">
+                    <div class="col-sm-12">Protein</div>
+                    <div class="col-sm-12" id="pGram"></div>
+                    <div class="col-sm-12" id="pCal"></div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="col-sm-12">Carbohydrates</div>
+                    <div class="col-sm-12" id="cGram"></div>
+                    <div class="col-sm-12" id="cCal"></div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="col-sm-12">Fat</div>
+                    <div class="col-sm-12" id="fGram"></div>
+                    <div class="col-sm-12" id="fCal"></div>
+                </div>
+            </div>
+        </div><br>
+        <div class="center-green">
+            <div class="row">
+                <div class="col-sm-12 medium">Micro Nutrients</div>
+            </div>
+        </div>
+        <div id="micro"></div>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            getTarget();
+            if (sessionStorage.getItem('targetData')) {
+                let data = JSON.parse(sessionStorage.getItem('targetData'));
+                showTarget(data);
+            }
+        });
+    </script>
+{% endblock %}

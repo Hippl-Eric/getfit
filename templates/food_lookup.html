@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Food Lookup
+{% endblock %}
+
+{% block header %}
+    Food Lookup
+{% endblock %}
+
+{% block description %}
+    Search for your favorite foods and lookup their full nutrient profile!
+{% endblock %}
+
+
+{% block main %}
+    <form autocomplete="off">
+        <div class="auto-container">
+            <div class="form-group autocomplete">
+                <input class="form-control" name="food-name" placeholder="Food name" type="text">
+                <button class="btn btn-primary nutrient" type="submit">Lookup</button>
+            </div>
+        </div>
+    </form>
+    <div class="container width-600 nutrient-list" style="display:block">
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            foodList();
+            getNutrients(showNutrients);
+            if (sessionStorage.getItem('foodLookupData')) {
+                let data = JSON.parse(sessionStorage.getItem('foodLookupData'));
+                showNutrients(data);
+            }
+        });
+    </script>
+{% endblock %}

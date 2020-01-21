@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Meal Planner
+{% endblock %}
+
+{% block header %}
+    Meal Planner
+{% endblock %}
+
+{% block description %}
+    Build a custom meal plan to fit your <a href="/target">target nutrients</a>!
+{% endblock %}
+
+{% block main %}
+    <div class="container width-600">
+        <!-- Trigger the modal with a button -->
+        <div>
+            <button type="button" id="launchModal"><i class="fa fa-plus"></i></button>
+            <p class="medium">Create a Meal</p>
+        </div><br>
+        <!-- Modal -->
+        <div class="modal fade" id="mealModal" role="dialog">
+            <div class="modal-dialog modal-lg">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Meal Builder</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <form autocomplete="off">
+                            <div class="form-group autocomplete">
+                                <input class="form-control" name="food-name" placeholder="Food name" type="text">
+                                <button class="btn btn-primary nutrient" type="submit">Add Food</button>
+                            </div>
+                        </form>
+                        <div id="food-item" class="food-item" style="display:block"></div>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="addMeal" class="btn btn-default" type="button" data-dismiss="modal">Add Meal</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="meal"></div>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            foodList();
+            getNutrients(showShortNutrients);
+            modal();
+            addMeal();
+
+            // Check browser session for any previously entered meals, and display
+            if (sessionStorage.getItem('mealPlannerData')) {
+                let data = sessionStorage.getItem('mealPlannerData');
+                showMeal(data);
+            }
+        });
+    </script>
+{% endblock %}
