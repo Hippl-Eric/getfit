@@ -12,7 +12,7 @@ app = Flask(__name__)
 app.config["TEMPLATES_AUTO_RELOAD"] = True
 
 # Ensure API Key and ID are provided
-os.environ.clear()
+# os.environ.clear()
 load_dotenv()
 if 'API_KEY' not in os.environ:
     print('API_KEY is not defined!')
