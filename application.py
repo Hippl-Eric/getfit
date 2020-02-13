@@ -144,3 +144,6 @@ def meal_planner():
     """Display the meal planner page"""
 
     return render_template("meal_planner.html")
+
+if __name__ == "__main__":
+    app.run()
