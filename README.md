@@ -66,4 +66,4 @@ If you are interested in the topic, I do intend to create a better functioning G
 
 ## Contact Information
 
-Once I create a proper portfolio site, that will be the best way to contact me.  For now, feel free to connect with me via [LinkedIn](https://www.linkedin.com/in/eric-hippler-563b1481/).
+Once I create a proper portfolio site, that will be the best way to contact me.  For now, feel free to connect with me via [LinkedIn](www.linkedin.com/in/eric-hippler).
