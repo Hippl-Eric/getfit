@@ -1,7 +1,7 @@
 # GetFit
 GetFit is a nutrition website that allows users to calculate their daily nutrient needs, build healthy meal plans, and lookup nutrition facts for their favorite foods.  The site is built using Python and Flask on the backend, Javascript and jQuery of the front, and styled with Bootstrap.  Nutrition information is pulled from the [Nutritionix API](https://developer.nutritionix.com/docs/v2).
 
-See a live version of this website here (link coming soon).  Video walk through [here](https://youtu.be/i3X8UZf0fw0).
+See a live version of this website: https://getfit-pyflask.herokuapp.com/.  Video walk through: https://youtu.be/i3X8UZf0fw0.
 
 ## Table of Contents
 
